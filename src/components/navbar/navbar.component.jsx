@@ -1,12 +1,14 @@
 
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AppLogo from "../appLogo/applogo.component";
 import { NavLink} from "./navbar.styles";
 import './navbar.styles.scss'
 
 
 const Navbar = ()=>{
+    const [showNav, setShowNav] = useState(false);
+    const isMobile = window.innerWidth>600 ? false:true
 
     const handleScroll = ()=>{
         window.scrollY > 20 ?
@@ -16,7 +18,7 @@ const Navbar = ()=>{
 
     useEffect(()=>{
         window.addEventListener('scroll', handleScroll)
-    })
+    },[showNav])
 
     const scrollToRecomended = (e)=>{
         e.preventDefault()
@@ -31,7 +33,8 @@ return(
             <div className="applogo">
                 <AppLogo></AppLogo>
             </div>
-            <div className="navlinks">
+            <i className={showNav?"fa fa-times fa-3x":"fa fa-bars fa-3x"} aria-hidden="true" onClick={()=> setShowNav(!showNav)} ></i>
+            <div className={(!showNav && isMobile)?"navlinks_hide":"navlinks"}>
                 <NavLink to={'/'}> Home </NavLink>
                 <NavLink to={'/'} onClick={scrollToRecomended}> Recommended </NavLink>
                 <NavLink to={'/'}> Must Visit </NavLink>

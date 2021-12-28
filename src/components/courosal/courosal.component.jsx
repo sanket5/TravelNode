@@ -73,7 +73,7 @@ class Courosal extends React.Component{
         return (
             <div className="courosal">
                 {
-                    this.imageList.map((image, i)=><img key={i} className={this.name+i+' '+'courosal_image'}  src={image} alt={i} />                )
+                    this.imageList.map((image, i)=><img key={i} className={this.name+i+' '+'courosal_image'}  src={image} alt={i} onContextMenu={()=> false} />                )
                 }
                 <span className="courosal_arrow right" onClick={this.next}>&#8666;</span>
                 <span className="courosal_arrow left" onClick={this.previous}>&#8667;</span>

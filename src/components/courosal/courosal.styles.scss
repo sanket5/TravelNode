@@ -4,6 +4,10 @@
     width: 400px;
     height: 220px;
     position: relative;
+
+    &:hover > &_arrow{
+            display: block;
+        }
     &_image{
         position: absolute;
         border-radius: 0.5rem 0.5rem 0 0;
@@ -24,7 +28,7 @@
     &_arrow{
         justify-content: center;
         align-items: center;
-        position: relative;
+        position: absolute;
         top: 40%;
         color: white;
         font-size: xx-large;
@@ -32,14 +36,19 @@
         height: 100px;
         text-align: center;
         cursor: pointer;
+        display: none;
     }
     .right{
-        float: left;
+        left: 10%;
     }
     .left{
-        float: right;
+        right: 10%
 
     }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
 }
 
 .opacityZero{

@@ -20,6 +20,14 @@
         justify-content: flex-start;
         background: white;
         align-items: flex-start;
+
     }
+
+    @media only screen and (max-width: 600px) {
+        margin: 0 2%;;
+        &_place{
+            flex-direction: column;
+        }
+      }
 
 }

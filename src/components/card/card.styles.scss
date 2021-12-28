@@ -41,11 +41,23 @@
                 margin: 20px 10px;
             }
             text-align: center;
+            margin-top: 2px;
+
         }
         &_description{
             margin: 10px;
             text-justify: inter-word;
+            margin-top: -10px;
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin: 2% 0;
+        &_details_name{
+            margin-top: 25px;
+        }
+
+      }
 
 }

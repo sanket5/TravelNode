@@ -25,5 +25,37 @@
     display: flex;
     align-items: center;
     margin-right: 10%;
-
+    &_hide{
+        display: none;
+    }
 }
+.fa{
+    display: none !important;
+}
+
+.fa-times{
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .navlinks{
+        flex-direction: column;
+        display: flex;
+        align-items: flex-end;    
+        margin: 0;
+        width: inherit;
+    }
+    .applogo{
+        display: none;
+    }
+    .navContainer{
+        height: auto;
+    }
+    .fa{
+        display: inline-block !important;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+  }
+

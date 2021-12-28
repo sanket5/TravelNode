@@ -21,4 +21,13 @@
         background-color: #d1792aa3;
         padding: 2%;
     }
+
+    @media only screen and (max-width: 600px) {
+        background-position: -540px 0;
+        &_title{
+            left: 2%;
+            width: 92%;
+            top: 60%;
+        }
+      }
 }
