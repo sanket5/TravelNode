@@ -1,0 +1,49 @@
+
+
+.courosal{
+    width: 400px;
+    height: 220px;
+    position: relative;
+    &_image{
+        position: absolute;
+        border-radius: 0.5rem 0.5rem 0 0;
+        width: 100%;
+        object-fit: cover;
+        display: none;
+        // height: max(10rem, 25vh);
+        max-height: calc(max(10rem, 30vh));
+        aspect-ratio: 4/3;
+        // filter: grayscale(100);
+        &:hover{
+            transform: scale(1.2);
+        }
+        transition: all 2s linear;
+
+    }
+
+    &_arrow{
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 40%;
+        color: white;
+        font-size: xx-large;
+        width: 50px;
+        height: 100px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .right{
+        float: left;
+    }
+    .left{
+        float: right;
+
+    }
+}
+
+.opacityZero{
+    display: block;
+    transition: all 2s;
+
+}

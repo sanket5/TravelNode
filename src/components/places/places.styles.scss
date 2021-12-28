@@ -1,0 +1,25 @@
+
+.cardContainer{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    & > *{
+        margin: 1.5%;
+    }
+
+    &_title{
+        font-size: xx-large;
+        color: black;
+        font-weight: 600;
+    }
+
+    &_place{
+        display: flex;
+        justify-content: flex-start;
+        background: white;
+        align-items: flex-start;
+    }
+
+}

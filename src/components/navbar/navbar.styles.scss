@@ -1,0 +1,29 @@
+
+.navContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+    z-index: 5;
+    &_scrolled{
+        background-color: black;
+    }
+}
+
+.applogo{
+    margin-left: 10%;
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+
+}
