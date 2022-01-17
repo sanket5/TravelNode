@@ -1,6 +1,7 @@
 
 import './courosal.styles.scss'
 import React from 'react'
+import More from '../more/more.component'
 
 class Courosal extends React.Component{
 
@@ -9,6 +10,7 @@ class Courosal extends React.Component{
         this.state = {currentIndex: 0}
         this.imageList = props.imageList
         this.name = props.name
+        this.description = props.description
         this.length = this.imageList.length-1
 
     }
@@ -71,13 +73,20 @@ class Courosal extends React.Component{
 
     render(){
         return (
-            <div className="courosal">
+            <div>
+                <div className="courosal">
                 {
                     this.imageList.map((image, i)=><img key={i} className={this.name+i+' '+'courosal_image'}  src={image} alt={i} onContextMenu={()=> false} />                )
                 }
                 <span className="courosal_arrow right" onClick={this.next}>&#8666;</span>
                 <span className="courosal_arrow left" onClick={this.previous}>&#8667;</span>
+                </div>
+                <div className="card_details">
+                    <h2 className="card_details_name">{this.name}</h2>
+                    <span className="card_details_description"> {this.description}</span>
+                </div>
             </div>
+            
         )
     }
 

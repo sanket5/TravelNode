@@ -28,6 +28,8 @@ const Navbar = ()=>{
         })
     }
 
+    const toggleNav = ()=> setShowNav(!showNav)
+
 return(
         <div className="navContainer">
             <div className="applogo">
@@ -35,11 +37,11 @@ return(
             </div>
             <i className={showNav?"fa fa-times fa-3x":"fa fa-bars fa-3x"} aria-hidden="true" onClick={()=> setShowNav(!showNav)} ></i>
             <div className={(!showNav && isMobile)?"navlinks_hide":"navlinks"}>
-                <NavLink to={'/'}> Home </NavLink>
-                <NavLink to={'/'} onClick={scrollToRecomended}> Recommended </NavLink>
-                <NavLink to={'/'}> Must Visit </NavLink>
-                <NavLink to={'/'}> Gallary </NavLink>
-                <NavLink to={'/'}> About </NavLink>
+                <NavLink to={'/'} onClick={()=>{ toggleNav() }}> Home </NavLink>
+                <NavLink to={'/'} onClick={(e)=>{ scrollToRecomended(e); toggleNav(); }}> Recommended </NavLink>
+                <NavLink to={'/'} onClick={()=>{ toggleNav() }}> Must Visit </NavLink>
+                <NavLink to={'/'} onClick={()=>{ toggleNav() }}> Gallary </NavLink>
+                <NavLink to={'/'} onClick={()=>{ toggleNav() }}> About </NavLink>
             </div>
         </div>
     )
