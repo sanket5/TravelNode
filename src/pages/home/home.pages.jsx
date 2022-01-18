@@ -3,12 +3,12 @@ import Courosal from "../../components/courosal/courosal.component"
 import Places from "../../components/places/places.component"
 
 
-const HomePge = ()=>(
+const HomePge = (props)=>(
     <div>
         <div>
             <Banner></Banner>
         </div>
-        <Places></Places>
+        <Places history={props.history} ></Places>
     </div>
 )
 export default HomePge

@@ -1,0 +1,11 @@
+
+
+.galary{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & > *{ 
+        width: 30%;
+        margin: 1%;
+    }
+}
