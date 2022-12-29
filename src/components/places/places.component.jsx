@@ -6,9 +6,8 @@ import './places.styles.scss'
 
 class Places extends React.Component{
 
-    constructor(){
-        super()
-
+    constructor(props){
+        super(props)
         this.state = {
             places:[]
         }
@@ -25,13 +24,18 @@ class Places extends React.Component{
                 <div className="cardContainer_title">Recommended Places</div>
                 <div className="cardContainer_place">
                     {
-                    this.state.places.map((place,i)=><Card key={i} place={place}></Card>)
+                    this.state.places.map((place,i)=><Card onClick={(event)=>this.navigateToPlaceDetails(event,place.name)} key={i} place={place}></Card>)
                     }
                 </div>
 
 
             </div>
         )
+    }
+
+    navigateToPlaceDetails = (e,name)=>{
+        if(e.target.classList.contains('courosal_arrow')) return null
+        this.props.history.push(`/places/${name}`)
     }
 
     componentDidMount(){

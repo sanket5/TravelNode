@@ -4,6 +4,7 @@
     width: 400px;
     height: 220px;
     position: relative;
+    transition: all 2s linear;
 
     &:hover > &_arrow{
             display: block;
@@ -13,16 +14,15 @@
         border-radius: 0.5rem 0.5rem 0 0;
         width: 100%;
         object-fit: cover;
-        display: none;
+        // display: none;
         // height: max(10rem, 25vh);
-        max-height: calc(max(10rem, 30vh));
-        aspect-ratio: 4/3;
+        aspect-ratio: 16/9;
+        visibility: hidden;
         // filter: grayscale(100);
         &:hover{
             transform: scale(1.2);
+            transition: all 2s linear;
         }
-        transition: all 2s linear;
-
     }
 
     &_arrow{
@@ -37,12 +37,13 @@
         text-align: center;
         cursor: pointer;
         display: none;
+        z-index: 5;
     }
     .right{
-        left: 10%;
+        left: 5%;
     }
     .left{
-        right: 10%
+        right: 5%
 
     }
 
@@ -52,7 +53,92 @@
 }
 
 .opacityZero{
-    display: block;
-    transition: all 2s;
+    // display: block;
+    visibility: visible;
+    animation: fadeIn 0.5s;
+
+    // transition: all 2s;
+}
+
+
+@keyframes fadeIn {
+    from {
+         opacity: 0;
+    }
+
+    to {
+         opacity: 1;
+    }
+}
+
+
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    width: 400px;
+    height: auto;
+    overflow: hidden;
+    margin:0 2%;
+    margin-bottom: 2%;
+
+    
+    &_image{
+        border-radius: 0.5rem 0.5rem 0 0;
+        width: 100%;
+        object-fit: cover;
+        // height: max(10rem, 25vh);
+        max-height: calc(max(10rem, 30vh));
+        aspect-ratio: 4/3;
+        // filter: grayscale(100);
+        ~ * {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+        transition: all 1s;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+    &_details{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        &_name{
+            h2{
+                margin: 20px 10px;
+            }
+            text-align: center;
+            margin-top: 4px;
+            z-index: 1;
+            background-color: rgba($color: wheat, $alpha: 0.7)
+
+        }
+        &_description{
+            margin: 10px;
+            text-justify: inter-word;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp:2; 
+            -webkit-box-orient: vertical;
+
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin: 2% 0;
+        &_details_name{
+            margin-top: 0;
+        }
+
+      }
 
 }
