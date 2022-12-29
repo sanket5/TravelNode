@@ -1,7 +1,8 @@
 
 import axios from 'axios'
 
-const placeUrl = 'https://node-server-mp.herokuapp.com/travel/place'
+const placeUrl = 'https://jade-distinct-cricket.cyclic.app/travel/place'
+// const placeUrl = 'http://localhost:3000/travel/place'
 const placeService = {}
 
 placeService.getPlaces = (placeName)=>{
