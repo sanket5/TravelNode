@@ -1,19 +1,29 @@
+import React, { useState } from 'react';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Button } from '@mui/material';
 
+const ImageGalleryDialog = ({ open, handleClose, images }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-import './galary.styles.scss'
-import ImageModal from '../imageModal/imageModal.component';
+    const handleNext = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    };
 
+    const handlePrevious = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    };
 
+    return (
+        <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+            <DialogContent>
+                <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} style={{ maxWidth: '100%', maxHeight: '70vh', display: 'block', margin: '0 auto' }} />
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handlePrevious}>Previous</Button>
+                <Button onClick={handleNext}>Next</Button>
+                <Button onClick={handleClose}>Close</Button>
+            </DialogActions>
+        </Dialog>
+    );
+};
 
-const Galary = (props)=>(
-    <div className="galary">
-        {
-            props?.imageList?.map((image,i)=>
-                <ImageModal key={i} image={image}></ImageModal>
-                )
-        }
-    </div>
-)
-
-
-export default Galary
+export default ImageGalleryDialog;

@@ -25,11 +25,11 @@ class Courosal extends React.Component{
 
     updateSlide = ()=>{
         document.querySelectorAll('.courosal img').forEach((im)=>{
-            if(im.className.match(this.name)){
-                im.classList.remove('opacityZero')
+            if(im?.className.match(this.name)){
+                im?.classList.remove('opacityZero')
             }
         })
-        document.getElementsByClassName(this.name+this.state.currentIndex)[0].classList.add('opacityZero')
+        document.getElementsByClassName(this.name+this.state.currentIndex)[0]?.classList.add('opacityZero')
     }
 
     checkLimits = (currentIndex, operation)=>{

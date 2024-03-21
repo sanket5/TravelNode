@@ -6,15 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 
+import { createRoot } from 'react-dom/client';
 
+const domNode = document.getElementById('root');
+const root = createRoot(domNode);
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
