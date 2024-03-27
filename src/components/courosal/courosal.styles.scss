@@ -5,6 +5,10 @@
     height: 220px;
     position: relative;
     transition: all 2s linear;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover > &_arrow{
             display: block;
@@ -13,7 +17,7 @@
         position: absolute;
         border-radius: 0.5rem 0.5rem 0 0;
         width: 100%;
-        object-fit: cover;
+        object-fit: contain;
         // display: none;
         // height: max(10rem, 25vh);
         aspect-ratio: 16/9;

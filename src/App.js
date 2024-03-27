@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path={'/'} element={<HomePge />}></Route>
           <Route path={"/places/:name"} element={<PlaceDetails />} ></Route>
+          <Route path={"/places/:name/:item"} element={<PlaceDetails />} ></Route>
         </Routes>
     </div>
   );
